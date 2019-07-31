@@ -1,7 +1,20 @@
-# Site for the Mood
+# Сайт-вдохновение
 
-[TODO. There will be project description]
+Статический сайт, который отображает смешные цитаты. Цитаты выбираются случайно.
 
-# Project Goals
+По нажатию на блок, цитата обновится.
 
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Посмотреть можно [тут](https://safintim.github.io/20_mood/index.html)
+
+## Как запустить
+
+```sh
+git clone https://github.com/Safintim/20_mood.git
+cd 20_mood
+```
+
+Открыть в браузере index.html
+
+## Цели проекта
+
+Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DEVMAN.org](https://devman.org)
