@@ -4,7 +4,7 @@
 
 По нажатию на блок, цитата обновится.
 
-Посмотреть можно [тут](https://safintim.github.io/20_mood/index.html)
+Посмотреть можно [тут](https://safintim.github.io/20_mood)
 
 ## Как запустить
 
