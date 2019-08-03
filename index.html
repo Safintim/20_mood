@@ -12,6 +12,9 @@
         "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
       },
       {
+        "phrase": "Вывеска над кафе — '\u003cМы открылись\u003e'. Что-то не так. Где же '\u003c/Мы открылись\u003e'?"
+      },
+      {
         "phrase": "Жена рожает уже в декабре, а мы вообще без понятия, как назвать ребёнка. Я имена переменным с трудом даю, не то что человеку. Пока рабочий вариант НовыйЧеловек."
       },
       {
@@ -47,11 +50,29 @@
     <div class="container" id="js-quote"></div>
   </div>
     <script>
+
+      var entityMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+        '/': '&#x2F;',
+        '`': '&#x60;',
+        '=': '&#x3D;'
+      };
+
+      function escapeHtml (string) {
+        return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+          return entityMap[s];
+        });
+      }
+
       var quotes = JSON.parse(document.getElementById('quotes_json').textContent);
       const divQuote = document.getElementById('js-quote');
       const updateQuote = (elem) => {
         random_quote = quotes[Math.floor(Math.random() * quotes.length)]
-        elem.innerHTML = random_quote['phrase'];
+        elem.innerHTML = escapeHtml(random_quote['phrase']);
       }
       window.addEventListener('load', event => updateQuote(divQuote));
       divQuote.addEventListener('click', event => updateQuote(divQuote));
